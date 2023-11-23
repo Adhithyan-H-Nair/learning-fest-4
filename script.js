@@ -1,16 +1,12 @@
-fetch('./persons.json')
-.then(function(response) {
-  return response.json();
+function getNumber(){
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var sum  =  parseInt(num1)+parseInt(num2);
+    var output = document.getElementById("answer");
+    output.innerHTML = "Sum= "+sum;
+};
+const findSum = document.querySelector(".addNum");
+findSum.addEventListener("click", () => {
+    getNumber()
 })
-.then (function(data) {
-  for (var i = 0; i < data.length; i++) {
-    document.querySelector('.data').innerHTML 
-    +='Name : ' + data[i].name + "<br>" 
-    +'Age : '+ data[i].age+"<br>"
-    +'Place : '+data[i].place+"<br>" 
-    +'Date of Birth : '+ data[i].dob + "<br> <br>";
-}
-})
-.cacth(function(error) {
-  alert(error);
-})
+
